@@ -59,15 +59,6 @@ cryptoNet.startEventLoop(onStart, onEvent)
 ##### Server:
 ```lua
 os.loadAPI("cryptoNet")
--- cryptoNet.setLoggingEnabled(false)
-
-function onStart()
-  -- Start the server
-  cryptoNet.host("LoginDemoServer")
-end
-
-function onEvent(event)
-os.loadAPI("cryptoNet")
 
 function onEvent(event)
   -- Open the door when a user logs in successfully.
