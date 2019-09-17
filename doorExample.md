@@ -1,3 +1,5 @@
+# Password Secured Door
+
 This example will show you how CryptoNet can be applied to a common application in ComputerCraft,
 password locked doors. The user opens the door by entering a username and password on a client
 machine next to the door. If they log in successfully, a server hidden below the door will open
