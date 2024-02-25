@@ -1,7 +1,5 @@
 # CryptoNet
 
-Install: `pastebin get GcbdekAV cryptoNet`
-
 CryptoNet is a secure and simple-to-use encrypted networking framework
 and login system for ComputerCraft computers. Here's an example:
 
