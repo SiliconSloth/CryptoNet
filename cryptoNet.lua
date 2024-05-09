@@ -27,22 +27,23 @@
 -- For more information, see CryptoNet's GitHub repo at https://github.com/SiliconSloth/CryptoNet
 
 -- Line numbers:
---   48 Third Party
---   53  - SHA-256, HMAC and PBKDF2 functions in ComputerCraft by Anavrins
---  287  - Simple RSA Library by 1lann
--- 1255  - RSA Key Generator by 1lann
--- 1467	 - Mersenne Twister RNG and ISAAC algorithm by KillaVanilla
--- 1724  - AES implementation by KillaVanilla
--- 2691  - Simple thread API by immibis
--- 2771 CryptoNet
--- 2800  - Accessors
--- 2847  - Validity Checks
--- 2952  - Helpers
--- 3276  - Send Functions
--- 3352  - Login System
--- 3904  - Core Networking
--- 4973  - Event Loop
--- 5081  - Certificate Authority
+--   49 Third Party
+--   54  - SHA-256, HMAC and PBKDF2 functions in ComputerCraft by Anavrins
+--  288  - Simple RSA Library by 1lann
+-- 1256  - RSA Key Generator by 1lann
+-- 1468	 - Mersenne Twister RNG and ISAAC algorithm by KillaVanilla
+-- 1725  - AES implementation by KillaVanilla
+-- 2692  - Simple thread API by immibis
+-- 2772 CryptoNet
+-- 2801  - Accessors
+-- 2848  - Validity Checks
+-- 2953  - Helpers
+-- 3277  - Send Functions
+-- 3353  - Login System
+-- 3905  - Core Networking
+-- 4974  - Event Loop
+-- 5082  - Certificate Authority
+-- 5249  - Module Export
 
 
 ------- THIRD PARTY -------
@@ -5211,7 +5212,7 @@ end
 -- with the same name and different public keys.
 
 -- Only run if executed on the command line, not when imported with os.loadAPI().
-if shell ~= nil then
+if not pcall(debug.getlocal, 4, 1) then
   setLoggingEnabled(true)
 	-- Set the CryptoNet working directory to match the system one.
   setWorkingDirectory(shell.dir())
@@ -5245,3 +5246,63 @@ if shell ~= nil then
     log("Invalid command.")
   end
 end
+
+--
+-- MODULE EXPORT
+--
+
+return {
+	getLoggingEnabled = getLoggingEnabled,
+	setLoggingEnabled = setLoggingEnabled,
+	getRepeatMessages = getRepeatMessages,
+	setRepeatMessages = setRepeatMessages,
+	getWorkingDirectory = getWorkingDirectory,
+	setWorkingDirectory = setWorkingDirectory,
+	getAllServers = getAllServers,
+	getAllClientSockets = getAllClientSockets,
+	keyValid = keyValid,
+	privateKeyValid = privateKeyValid,
+	publicKeyValid = publicKeyValid,
+	certificateValid = certificateValid,
+	serverValid = serverValid,
+	socketValid = socketValid,
+	userTableValid = userTableValid,
+	resolveModemSide = resolveModemSide,
+	getChannel = getChannel,
+	channelInUse = channelInUse,
+	serializeCertOrKey = serializeCertOrKey,
+	deserializeCertOrKey = deserializeCertOrKey,
+	generateKey = generateKey,
+	generateCertificate = generateCertificate,
+	loadCertAuthKey = loadCertAuthKey,
+	verifyCertificate = verifyCertificate,
+	send = send,
+	sendUnencrypted = sendUnencrypted,
+	hashPassword = hashPassword,
+	loadUserTable = loadUserTable,
+	saveUserTable = saveUserTable,
+	addUserHashed = addUserHashed,
+	addUser = addUser,
+	deleteUser = deleteUser,
+	userExists = userExists,
+	getPasswordHash = getPasswordHash,
+	getPermissionLevel = getPermissionLevel,
+	setPasswordHashed = setPasswordHashed,
+	setPassword = setPassword,
+	setPermissionLevel = setPermissionLevel,
+	checkPasswordHashed = checkPasswordHashed,
+	checkPassword = checkPassword,
+	loginHashed = loginHashed,
+	login = login,
+	logout = logout,
+	host = host,
+	close = close,
+	closeAll = closeAll,
+	listen = listen,
+	discover = discover,
+	requestCertificate = requestCertificate,
+	connect = connect,
+	startEventLoop = startEventLoop,
+	initCertificateAuthority = initCertificateAuthority,
+	signCertificate = signCertificate
+}
