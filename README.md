@@ -5,7 +5,7 @@ and login system for ComputerCraft computers. Here's an example:
 
 ##### Client:
 ```lua
-os.loadAPI("cryptoNet")
+local cryptoNet = require("cryptoNet")
 -- cryptoNet.setLoggingEnabled(false)
 
 -- Runs when the event loop starts
@@ -30,7 +30,7 @@ cryptoNet.startEventLoop(onStart, onEvent)
 
 ##### Server:
 ```lua
-os.loadAPI("cryptoNet")
+local cryptoNet = require("cryptoNet")
 -- cryptoNet.setLoggingEnabled(false)
 
 -- Runs when the event loop starts
@@ -71,7 +71,7 @@ Here's how you use the login system:
 
 ##### Client:
 ```lua
-os.loadAPI("cryptoNet")
+local cryptoNet = require("cryptoNet")
 -- cryptoNet.setLoggingEnabled(false)
 
 function onStart()
@@ -103,7 +103,7 @@ cryptoNet.startEventLoop(onStart, onEvent)
 
 ##### Server:
 ```lua
-os.loadAPI("cryptoNet")
+local cryptoNet = require("cryptoNet")
 -- cryptoNet.setLoggingEnabled(false)
 
 function onStart()
@@ -137,7 +137,7 @@ cryptoNet.startEventLoop(onStart, onEvent)
 ##### Adding users to the server:
 ```lua
 -- This can just be run in the interactive Lua prompt
-os.loadAPI("cryptoNet")
+local cryptoNet = require("cryptoNet")
 -- Start the server to add users to
 cryptoNet.host("LoginDemoServer")
 -- Add a user with a password
@@ -155,11 +155,6 @@ For an example of a secure password door made with CryptoNet, see the [door exam
 I am not a security expert and cannot guarantee its effectiveness. 
 Do not use passwords used with other real life services with CryptoNet.**
 
-## Install
-CryptoNet can be installed from Pastebin with the following command:
-
-`pastebin get GcbdekAV cryptoNet`
-
 ## How CryptoNet works (and why you shouldn't use Rednet)
 TL;DR Rednet has no way to prevent attackers from reading your messages,
 or pretending to be another user. For more information about how CryptoNet works internally
@@ -173,6 +168,8 @@ and why it exists, check out [How CryptoNet Works](https://github.com/SiliconSlo
 - [Settings](https://github.com/SiliconSloth/CryptoNet/wiki/Settings)
 
 ## Acknowledgements
+The original project by [SiliconSloth](https://github.com/SiliconSloth) can be found [here](https://github.com/SiliconSloth/CryptoNet)
+
 CryptoNet contains several third-party libraries that allow it to function.
 Thanks to the creators of all these libraries for making CryptoNet possible!
 - [SHA-256, HMAC and PBKDF2 functions in ComputerCraft by Anavrins](https://pastebin.com/6UV4qfNF)
