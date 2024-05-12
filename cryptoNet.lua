@@ -43,7 +43,7 @@
 -- 3905  - Core Networking
 -- 4974  - Event Loop
 -- 5082  - Certificate Authority
--- 5249  - Module Export
+-- 5251  - Module Export
 
 
 ------- THIRD PARTY -------
@@ -5211,8 +5211,8 @@ end
 -- Only sign the certificates of trusted servers, and don't sign two certificates
 -- with the same name and different public keys.
 
--- Only run if executed on the command line, not when imported with os.loadAPI().
-if not pcall(debug.getlocal, 4, 1) then
+-- Only run if executed on the command line, not when imported.
+if debug.getlocal(4, 1) ~= nil then
   setLoggingEnabled(true)
 	-- Set the CryptoNet working directory to match the system one.
   setWorkingDirectory(shell.dir())

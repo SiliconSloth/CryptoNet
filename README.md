@@ -168,8 +168,6 @@ and why it exists, check out [How CryptoNet Works](https://github.com/SiliconSlo
 - [Settings](https://github.com/SiliconSloth/CryptoNet/wiki/Settings)
 
 ## Acknowledgements
-The original project by [SiliconSloth](https://github.com/SiliconSloth) can be found [here](https://github.com/SiliconSloth/CryptoNet)
-
 CryptoNet contains several third-party libraries that allow it to function.
 Thanks to the creators of all these libraries for making CryptoNet possible!
 - [SHA-256, HMAC and PBKDF2 functions in ComputerCraft by Anavrins](https://pastebin.com/6UV4qfNF)
