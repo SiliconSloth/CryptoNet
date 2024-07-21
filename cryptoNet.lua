@@ -5212,7 +5212,7 @@ end
 -- with the same name and different public keys.
 
 -- Only run if executed on the command line, not when imported.
-if debug.getlocal(4, 1) ~= nil then
+if shell ~= nil and debug.getinfo(2).name ~= "require" then
   setLoggingEnabled(true)
 	-- Set the CryptoNet working directory to match the system one.
   setWorkingDirectory(shell.dir())
