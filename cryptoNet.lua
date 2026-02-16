@@ -2967,18 +2967,7 @@ function resolveModemSide(modemSide)
       error("Could not find a modem.", 3)
     end
   else
-		-- If an argument was provided, check that it is a valid side.
-    local found = false
-    for _,side in pairs(redstone.getSides()) do
-      if side == modemSide then
-        found = true
-        break
-      end
-    end
-    if not found then
-      error(tostring(modemSide).." is not a valid side.", 3)
-    end
-  end
+		-- If an argument was provided, check that it is actually a modem.
   if peripheral.getType(modemSide) ~= "modem" then
     error("No modem on side "..modemSide..".", 3)
   end
@@ -5306,3 +5295,4 @@ return {
 	initCertificateAuthority = initCertificateAuthority,
 	signCertificate = signCertificate
 }
+
