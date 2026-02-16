@@ -2967,11 +2967,11 @@ function resolveModemSide(modemSide)
       error("Could not find a modem.", 3)
     end
   else
-		-- If an argument was provided, check that it is actually a modem.
-  if peripheral.getType(modemSide) ~= "modem" then
-    error("No modem on side "..modemSide..".", 3)
+	-- If an argument was provided, check that it is actually a modem.
+    if peripheral.getType(modemSide) ~= "modem" then
+      error("No modem on side "..modemSide..".", 3)
+    end
   end
-
   log("Using modem "..modemSide..".")
   return modemSide
 end
@@ -5295,4 +5295,5 @@ return {
 	initCertificateAuthority = initCertificateAuthority,
 	signCertificate = signCertificate
 }
+
 
